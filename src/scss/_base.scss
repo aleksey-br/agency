@@ -11,9 +11,40 @@ body {
   color: $text-primary;
   font-size: 16px;
 }
+.wrapper {
+  height: 100vh;
+  position: relative;
+  overflow-x: hidden;
 
+  &::after {
+    content: "";
+    position: absolute;
+    top: -512px;
+    right: -320px;
+    width: 1007px;
+    height: 942px;
+    background: $primary-light;
+    border-radius: 120px;
+    transform: rotate(127deg);
+    z-index: -1;
+    opacity: 0.5;
+  }
+  &::before {
+    content: "";
+    position: absolute;
+    top: -512px;
+    right: -300px;
+    width: 997px;
+    height: 993px;
+    background: $second-light;
+    border-radius: 120px;
+    transform: rotate(127deg);
+    z-index: -1;
+    opacity: 0.5;
+  }
+}
 .container {
-  max-width: 1250px;
+  width: 1250px;
   margin: 0 auto;
   padding: 0 15px;
 }
