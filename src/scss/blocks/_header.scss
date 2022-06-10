@@ -1,0 +1,122 @@
+.header {
+  // .header__wrap
+  &__wrap {
+    height: 100px;
+    display: flex;
+    align-items: center;
+  }
+  // .header__logo
+  &__logo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  // .header__menu
+  &__menu {
+    margin-left: 64px;
+  }
+  // .header__actions
+  &__actions {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+    gap: 50px;
+  }
+}
+
+.logo {
+  // .logo__image
+  &__image {
+  }
+  // .logo__title
+  &__title {
+    font-size: 24px;
+    font-weight: 500;
+  }
+}
+.menu {
+  // .menu__list
+  &__list {
+    display: flex;
+    gap: 50px;
+  }
+  // .menu__item
+  &__item {
+    padding: 4px;
+  }
+  // .menu__link
+  &__link {
+    font-size: 18px;
+    font-weight: 500;
+    color: $text-secondary;
+    transition: 0.3s ease-in-out;
+    &:hover {
+      color: $text-primary;
+    }
+  }
+}
+.actions {
+  // .actions__sing
+  &__sing {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    position: relative;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 5px;
+      right: -25px;
+      width: 2px;
+      height: 25px;
+      background: $line;
+    }
+  }
+  // .actions__settings
+  &__settings {
+    img {
+      transition: 0.3s ease-in-out;
+      &:hover {
+        transform: rotate(180deg);
+      }
+    }
+  }
+}
+.sing {
+  // .sing__login
+  &__login {
+    text-transform: uppercase;
+    color: $text-primary;
+    font-size: 18px;
+    font-weight: 500;
+  }
+  // .sing__registration
+  &__registration {
+    font-size: 16px;
+    text-transform: uppercase;
+    color: $text-white;
+    font-weight: 500;
+    border: none;
+    background: $btn-primary;
+    transition: 0.3s ease-in-out;
+    &:hover {
+      transform: translateY(3px);
+    }
+  }
+}
+
+.link-active {
+  position: relative;
+  color: $link-active;
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    height: 3px;
+    width: 42px;
+    background: $link-active;
+    border-radius: 1px;
+  }
+}

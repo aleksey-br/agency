@@ -1,0 +1,32 @@
+:root {
+  --primary-main: #2196f3;
+  --primary-light: #bbdefb;
+  --primary-dark: #0d47a1;
+
+  --second-main: #00bcd4;
+  --second-light: #b2ebf2;
+  --second-dark: #006064;
+
+  --paper-light: #ffffff;
+  --paper-dark: #424242;
+
+  --default-main: #979797;
+  --default-dark: #303030;
+  --default-light: #dedede;
+
+  --text-primary: #000000;
+  --text-secondary: rgba(0, 0, 0, 0.54);
+}
+
+$bg: var(--paper-light);
+
+$text-primary: var(--text-primary);
+$text-secondary: var(--text-secondary);
+$text-white: var(--paper-light);
+
+$link-active: var(--primary-main);
+
+$btn-primary: var(--primary-main);
+$btn-second: var(--second-main);
+
+$line: var(--default-main);
