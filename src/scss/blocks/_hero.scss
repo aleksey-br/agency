@@ -88,7 +88,17 @@
 .pagination {
   // .pagination__item
   &__item {
+    position: relative;
     cursor: pointer;
+    &:not(:last-child)::after {
+      content: "";
+      position: absolute;
+      top: 5px;
+      right: -50px;
+      width: 0.5px;
+      height: 60px;
+      background: $line;
+    }
   }
   // .pagination__title
   &__title {
@@ -113,7 +123,7 @@
     content: "";
     position: absolute;
     left: 0;
-    bottom: -9px;
+    bottom: -22px;
     width: 150px;
     height: 6px;
     background: $link-active;
