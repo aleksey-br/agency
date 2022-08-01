@@ -1,0 +1,60 @@
+.help {
+  margin-bottom: 140px;
+  // .help__wrap
+  &__wrap {
+    display: flex;
+    align-items: center;
+    gap: 45px;
+    @include _740 {
+      flex-wrap: wrap;
+    }
+  }
+  // .help__col
+  &__col {
+    flex: 1 1 auto;
+    min-width: 330px;
+  }
+  // .help__title
+  &__title {
+    margin-bottom: 40px;
+    text-align: left;
+  }
+  // .help__list
+  &__list {
+  }
+  // .help__item
+  &__item {
+    display: flex;
+    font-size: calc(16px + 2px * (100vw / 1920px));
+    &:not(:last-child) {
+      margin-bottom: 15px;
+    }
+  }
+  // .help__item-round
+  &__item-round {
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: $green-light;
+    border-radius: 10px;
+    margin-right: 10px;
+  }
+  // .help__item-icon
+  &__item-icon {
+    width: 10px;
+    height: 10px;
+  }
+  // .help__image-wrap
+  &__image-wrap {
+    max-width: 436px;
+    max-height: 393px;
+  }
+  // .help__image
+  &__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}

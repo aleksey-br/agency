@@ -1,9 +1,15 @@
-@import "./varible";
 @import "./reset";
+@import "./varible";
+@import "./mixins";
 @import "./base";
 
-// Blocks
-
+// blocks
 @import "./blocks/header";
 @import "./blocks/hero";
-@import "./blocks/about";
+@import "./blocks/app";
+@import "./blocks/speakers";
+@import "./blocks/help";
+@import "./blocks/advantage";
+@import "./blocks/steps";
+@import "./blocks/app-work";
+@import "./blocks/footer";

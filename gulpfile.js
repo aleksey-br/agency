@@ -1,3 +1,4 @@
+const fs = require("fs");
 const { src, dest, parallel, series, watch } = require("gulp");
 const browsersync = require("browser-sync").create();
 const concat = require("gulp-concat");
@@ -10,11 +11,19 @@ const csso = require("gulp-csso");
 const babel = require("gulp-babel");
 const uglify = require("gulp-uglify-es").default;
 const imagemin = require("gulp-imagemin");
-// const svgSprite = require("gulp-svg-sprite");
+const svgSprite = require("gulp-svg-sprite");
 const del = require("del");
 
 const entry = "./src";
 const output = "./dist";
+
+let config = {
+  mode: {
+    stack: {
+      sprite: "../sprite.svg", //sprite file name
+    },
+  },
+};
 
 const path = {
   src: {
@@ -22,6 +31,7 @@ const path = {
     scss: entry + "/scss/style.scss",
     js: entry + "/js/index.js",
     image: entry + "/assets/images/**/*.{png,jpg,jpeg,gif,ico}",
+    svg: entry + "/assets/images/svg/**/*.svg",
     fonts: entry + "/assets/fonts/*.ttf",
   },
   build: {
@@ -29,6 +39,7 @@ const path = {
     css: output + "/css/",
     js: output + "/js/",
     image: output + "/assets/images/",
+    svg: output + "/assets/images/svg",
     fonts: output + "/assets/fonts/",
   },
 };
@@ -82,46 +93,11 @@ const image = () => {
     )
     .pipe(dest(path.build.image));
 };
-// const svg = () => {
-//   return src(path.src.image + "svg/*.svg")
-//     .pipe(
-//       svgSprite({
-//         shape: {
-//           dimension: {
-//             maxWidth: 500,
-//             maxHeight: 500,
-//           },
-//           spacing: {
-//             padding: 0,
-//           },
-//           transform: [
-//             {
-//               svgo: {
-//                 plugins: [
-//                   { removeViewBox: false },
-//                   { removeUnusedNS: false },
-//                   { removeUselessStrokeAndFill: true },
-//                   { cleanupIDs: false },
-//                   { removeComments: true },
-//                   { removeEmptyAttrs: true },
-//                   { removeEmptyText: true },
-//                   { collapseGroups: true },
-//                   { removeAttrs: { attrs: "(fill|stroke|style)" } },
-//                 ],
-//               },
-//             },
-//           ],
-//         },
-//         mode: {
-//           symbol: {
-//             dest: ".",
-//             sprite: "sprite.svg",
-//           },
-//         },
-//       })
-//     )
-//     .pipe(dest(path.build.image + "svg/"));
-// };
+
+const svg = async () => {
+  return src(path.src.svg).pipe(svgSprite(config)).pipe(dest(path.build.svg));
+};
+
 const server = () => {
   browsersync.init({
     server: { baseDir: output },
@@ -140,9 +116,9 @@ exports.html = html;
 exports.style = style;
 exports.script = script;
 exports.image = image;
-// exports.svg = svg;
+exports.svg = svg;
 exports.server = server;
 exports.default = series(
   clear,
-  parallel(style, image, html, script, server, fileWatch)
+  parallel(style, image, svg, html, script, server, fileWatch)
 );

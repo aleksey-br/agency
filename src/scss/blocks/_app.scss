@@ -1,0 +1,166 @@
+.app {
+  // .app__wrap
+  &__wrap {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    margin-bottom: 140px;
+
+    @include _768 {
+      flex-wrap: wrap;
+    }
+  }
+  &__col {
+    flex: 1 1 auto;
+
+    &:last-child {
+      max-width: 390px;
+      @include _768 {
+        max-width: 100%;
+      }
+    }
+  }
+  // .app__video
+  &__video {
+    // max-width: 615px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    img {
+      width: 100%;
+      height: 100%;
+      transform: translateX(-20px);
+      @include _768 {
+        transform: translateX(-10px);
+      }
+    }
+  }
+  // .app__video-controller
+  &__video-controller {
+    width: 73px;
+    height: 51px;
+    background: rgb(33, 33, 33, 90%);
+    position: absolute;
+    z-index: 99;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+
+    span {
+      display: block;
+      width: 0;
+      height: 0;
+      border-top: 10px solid transparent;
+      border-left: 20px solid #ffffff9c;
+      border-bottom: 10px solid transparent;
+    }
+  }
+  // .app__offer
+  &__offer {
+  }
+  // .app__download
+  &__download {
+    display: flex;
+    gap: 20px;
+
+    @include _360 {
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+  }
+  // .app__title
+  &__title {
+    font-size: calc(24px + 8px * (100vw / 1920px));
+    font-weight: bold;
+    margin-bottom: 37px;
+  }
+  // .app__desc
+  &__desc {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 30px;
+  }
+}
+
+.desc {
+  // .desc__img
+  &__img {
+    align-self: baseline;
+    width: 90px;
+    height: 90px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #fff;
+    border-radius: 10px;
+
+    @include _768 {
+      width: 80px;
+      height: 80px;
+    }
+    @include _480 {
+      width: 75px;
+      height: 75px;
+    }
+  }
+  // .desc__title
+  &__title {
+    color: $green;
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 15px;
+  }
+  // .desc__subtitle
+  &__subtitle {
+    span {
+      font-size: calc(13px + 2px * (100vw / 1920px));
+      display: block;
+    }
+    span:nth-child(1) {
+      margin-bottom: 10px;
+    }
+  }
+}
+.download {
+  // .download__btn
+  &__btn {
+    width: 139px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    background: #2e3a59;
+    border-radius: 10px;
+    padding: 0px 10px;
+  }
+  // .download__btn-content
+  &__btn-content {
+    color: #fff;
+  }
+}
+
+.apple-icon {
+  width: 115px;
+  height: 28px;
+}
+.google-icon {
+  width: 115px;
+  height: 28px;
+}
+
+.content {
+  // .content__head
+  &__head {
+    font-size: 10px;
+    display: block;
+    margin-bottom: 3px;
+  }
+  // .Content__body
+  &__body {
+    font-size: 18px;
+  }
+}

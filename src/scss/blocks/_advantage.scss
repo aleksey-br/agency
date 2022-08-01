@@ -1,0 +1,126 @@
+.advantage {
+  margin-bottom: 100px;
+  // .advantage__row
+  &__row {
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+    position: relative;
+
+    @include _740 {
+      flex-wrap: wrap;
+    }
+
+    &::after {
+      content: "";
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: $green-light;
+      border-radius: 24px;
+      pointer-events: none;
+      z-index: -1;
+
+      @include _740 {
+        height: 93%;
+        top: 50px;
+
+        border-radius: 0;
+      }
+    }
+  }
+  // .advantage__mobile
+  &__mobile {
+    max-width: 360px;
+    display: flex;
+    justify-content: center;
+  }
+  // .advantage__image
+  &__image {
+    width: 270px;
+    height: 540px;
+
+    @include _1070 {
+      width: 240px;
+      height: 480px;
+    }
+    @include _979 {
+      width: 176px;
+      height: 352px;
+    }
+    @include _480 {
+      width: 160px;
+      height: 320px;
+    }
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      transform: translate(0px, -80px);
+      @include _979 {
+        transform: translate(0px, -50px);
+      }
+      @include _740 {
+        transform: translate(0, 0);
+      }
+    }
+  }
+  // .advantage__offer
+  &__offer {
+    max-width: 710px;
+    padding: 50px 30px 50px 0;
+
+    @include _740 {
+      padding-top: 15px;
+      padding-right: 0;
+    }
+  }
+  // .advantage__title
+  &__title {
+    font-size: calc(24px + 12px * (100vw / 1920px));
+    text-align: left;
+    margin-bottom: 40px;
+    @include _740 {
+      text-align: center;
+    }
+  }
+}
+
+.offer {
+  // .offer__item
+  &__item {
+    position: relative;
+    padding-left: 10px;
+
+    &:not(:last-child) {
+      margin-bottom: 25px;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 5px;
+      left: 0px;
+      width: 5px;
+      height: 5px;
+      background: $green;
+      border-radius: 5px;
+    }
+  }
+
+  // .offer__title
+  &__title {
+    font-size: calc(18px + 2px * (100vw / 1920px));
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  // .offer__desc
+  &__desc {
+    font-size: calc(16px + 2px * (100vw / 1920px));
+    line-height: 1.2;
+  }
+}

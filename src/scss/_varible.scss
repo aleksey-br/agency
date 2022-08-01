@@ -1,35 +1,23 @@
-:root {
-  --primary-main: #2196f3;
-  --primary-light: #bbdefb;
-  --primary-dark: #0d47a1;
+// Container size
+$size-xl: 1200px;
+$size-l: 1024px;
+$size-m: 768px;
+$size-s: 400px;
 
-  --second-main: #00bcd4;
-  --second-light: #b2ebf2;
-  --second-dark: #006064;
+// color global
+$black: #0e0e0f;
+$dark: #333333;
+$green: #00b9b6;
+$green-light: rgba(0, 185, 182, 0.1);
+$orange: #ffa800;
 
-  --paper-light: #ffffff;
-  --paper-dark: #424242;
+// fonts
 
-  --default-main: #979797;
-  --default-dark: #303030;
-  --default-light: #dedede;
+$h1-size: calc(28px + 20px * (100vw / 1920px));
 
-  --text-primary: #000000;
-  --text-secondary: rgba(0, 0, 0, 0.54);
+// function
+
+@function font-sz($min, $max) {
+  $sum: ($max - $min);
+  @return calc($min + $sum * (100vw / 1920px));
 }
-
-$bg: var(--paper-light);
-$primary-light: var(--primary-light);
-$second-light: var(--second-light);
-$primary-main: var(--primary-main);
-
-$text-primary: var(--text-primary);
-$text-secondary: var(--text-secondary);
-$text-white: var(--paper-light);
-
-$link-active: var(--primary-main);
-
-$btn-primary: var(--primary-main);
-$btn-second: var(--second-main);
-
-$line: var(--default-main);
