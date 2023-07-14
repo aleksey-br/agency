@@ -8,7 +8,7 @@
 
 &nbsp;
 
-[**Deploy**](https://agency-lp.netlify.app/)
+[**Deploy**](https://lex-gh.github.io/agency/)
 
 ---
 
